@@ -3,7 +3,7 @@ COPY . /workspace/app
 WORKDIR /workspace/app
 RUN gradle build --no-daemon
 
-FROM openjdk:11-jdk-alpine
+FROM openjdk:11
 COPY --from=build /workspace/app /workspace/app
 WORKDIR /workspace/app
 EXPOSE 8080
