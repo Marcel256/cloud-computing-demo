@@ -1,9 +1,9 @@
-FROM gradle:7.3.3-jdk8 as build
+FROM gradle:7.3.3-jdk11 as build
 COPY . /workspace/app
 WORKDIR /workspace/app
 RUN gradle build
 
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11-jdk-alpine
 COPY --from=build /workspace/app /workspace/app
 WORKDIR /workspace/app
 EXPOSE 8080
