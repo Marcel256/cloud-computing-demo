@@ -20,10 +20,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("io.ktor:ktor-client-core:1.6.7")
-    implementation("io.ktor:ktor-client-cio:1.6.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.6.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
