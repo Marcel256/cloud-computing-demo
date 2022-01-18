@@ -1,10 +1,9 @@
-FROM gradle:7.3.3-jdk11 as build
-COPY . /workspace/app
-WORKDIR /workspace/app
-RUN gradle build --no-daemon
+FROM node:16
+WORKDIR /usr/src/app
 
-FROM openjdk:11
-COPY --from=build /workspace/app /workspace/app
-WORKDIR /workspace/app
+COPY package.json ./
+RUN npm install
+COPY . .
+
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "build/libs/demo-0.0.1-SNAPSHOT.jar"]
+CMD [ "node", "index.js" ]

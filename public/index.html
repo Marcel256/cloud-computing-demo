@@ -40,7 +40,11 @@
             document.getElementById('name').innerText = res.name;
             document.getElementById('country').innerText = res.country;
             document.getElementById('brewery').innerText = res['name_breweries'];
-            document.getElementById('description').innerText = res.descript;
+            if (res.descript == undefined) {
+                document.getElementById('description').innerText = ''
+            } else {
+                document.getElementById('description').innerText = res.descript;
+            }
         }
     }
 
